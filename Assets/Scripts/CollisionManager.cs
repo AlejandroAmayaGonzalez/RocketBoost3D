@@ -16,7 +16,7 @@ public class CollisionManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
     }
 
-    void OllisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){
         if (!isControllable) return;
 
         switch (gameObject.tag){
