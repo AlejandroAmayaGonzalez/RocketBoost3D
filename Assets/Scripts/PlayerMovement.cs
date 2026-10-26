@@ -4,20 +4,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
 
+    [Header("Input actions")]
     [SerializeField] private InputAction thrust;
     [SerializeField] private InputAction rotation;
+
+    [Header("Movement settings")]
     [SerializeField] private float moveForce = 10f;
     [SerializeField] private float rotationForce = 2.5f;
 
+    [Header("Particle systems")]
     [SerializeField] private ParticleSystem thrustParticleSystem;
     [SerializeField] private ParticleSystem leftThrustParticleSystem;
     [SerializeField] private ParticleSystem rightThrustParticleSystem;
 
+    [Header("Audio settings")]
+    [SerializeField] private AudioClip thrustAudioClip;
+
     Rigidbody rb;
+    AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate(){
@@ -30,6 +39,9 @@ public class PlayerMovement : MonoBehaviour {
         rotation.Enable();
     }
 
+    /// <summary>
+    /// Process the rotation and applies a rotation to the player
+    /// </summary>
     private void ProcessRotation(){
         rb.freezeRotation = true; // Freezing rotation so we can control it manually
 
@@ -83,13 +95,22 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void StopThrusting(){ thrustParticleSystem.Stop(); }
+    /// <summary>
+    /// Stop the thrusting action by stopping the particles and sound
+    /// </summary>
+    private void StopThrusting(){ 
+        thrustParticleSystem.Stop(); 
+        audioSource.Stop();
+    }
 
+    /// <summary>
+    /// Start adding a rotation force, particles and sound
+    /// </summary>
     private void StartThrusting(){
         rb.AddRelativeForce(Vector3.up * moveForce);
 
         if (!thrustParticleSystem.isPlaying){ thrustParticleSystem.Play(); }
 
-        // Start particles and sound
+        if (!audioSource.isPlaying){ audioSource.PlayOneShot(thrustAudioClip); }
     }
 }
