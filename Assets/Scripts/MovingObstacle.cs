@@ -11,7 +11,7 @@ public class MovingObstacle : MonoBehaviour {
         transform.DOLocalMove(transform.localPosition + movement, duration)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo)
-            .SetDelay(delay);
+            .SetDelay(delay);    
     }
 
 }

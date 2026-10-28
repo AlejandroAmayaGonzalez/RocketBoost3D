@@ -19,7 +19,7 @@ public class CollisionManager : MonoBehaviour {
     void OnCollisionEnter(Collision collision){
         if (!isControllable) return;
 
-        switch (gameObject.tag){
+        switch (collision.gameObject.tag){
             case "LaunchPad":
                 Debug.Log("LaunchPad collision");
                 break;
