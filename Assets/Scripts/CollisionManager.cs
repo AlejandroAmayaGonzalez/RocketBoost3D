@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionManager : MonoBehaviour {
     [Header("Audio Settings")]
@@ -8,6 +9,7 @@ public class CollisionManager : MonoBehaviour {
     [Header("Particle Systems")]
     [SerializeField] private ParticleSystem explosionParticles;
     [SerializeField] private ParticleSystem landingParticles;
+    [SerializeField] private float crashDelay = 2f;
 
     AudioSource audioSource;
     bool isControllable = true;
@@ -45,5 +47,11 @@ public class CollisionManager : MonoBehaviour {
         audioSource.PlayOneShot(audioClip);
         particleSystem.Play();
         GetComponent<PlayerMovement>().enabled = false;
+        Invoke(nameof(ReloadScene), crashDelay);
+    }
+
+    void ReloadScene(){
+        // Reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
