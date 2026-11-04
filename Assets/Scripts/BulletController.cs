@@ -4,9 +4,9 @@ using UnityEngine;
 public class BulletController : MonoBehaviour {
     
     [Header("Bullet Settings")]
-    [SerializeField] private float bulletLifeTime = 1f;
+    [SerializeField] private float bulletLifeTime = 3f;
 
-    void Onable(){
+    void OnEnable(){
         Invoke(nameof(DeactivateBullet), bulletLifeTime);
     }
 

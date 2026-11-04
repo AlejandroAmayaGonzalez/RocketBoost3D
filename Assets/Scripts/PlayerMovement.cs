@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 
     [Header("Movement settings")]
     [SerializeField] private float moveForce = 10f;
-    [SerializeField] private float rotationForce = 2.5f;
+    [SerializeField] private float rotationForce = 180f;
 
     [Header("Particle systems")]
     [SerializeField] private ParticleSystem thrustParticleSystem;
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void RotateLeft()
     {
-        transform.Rotate(Vector3.back * rotationForce);
+        transform.Rotate(Vector3.back * rotationForce * Time.deltaTime, Space.Self);
 
         if (!leftThrustParticleSystem.isPlaying){
             rightThrustParticleSystem.Stop();
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void RotateRight()
     {
-        transform.Rotate(Vector3.forward * rotationForce);
+        transform.Rotate(Vector3.forward * rotationForce * Time.deltaTime, Space.Self);
 
         if (!rightThrustParticleSystem.isPlaying){
             leftThrustParticleSystem.Stop();

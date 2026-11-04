@@ -22,9 +22,6 @@ public class CollisionManager : MonoBehaviour {
         if (!isControllable) return;
 
         switch (collision.gameObject.tag){
-            case "LaunchPad":
-                Debug.Log("LaunchPad collision");
-                break;
             case "LandingPad":
                 CustomCollision(landingSuccessAudioClip, landingParticles);
                 break;
