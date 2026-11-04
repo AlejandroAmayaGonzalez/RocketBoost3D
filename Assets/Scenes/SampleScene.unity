@@ -440,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0.039786913, y: 0.07097274, z: -0.0028473504, w: -0.9966804}
-  m_LocalPosition: {x: 4.7844696, y: 4.018414, z: -14.265609}
+  m_LocalPosition: {x: 4.7814074, y: 4.0184135, z: -14.2660475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1115,7 +1115,7 @@ Transform:
   m_GameObject: {fileID: 699933331}
   serializedVersion: 2
   m_LocalRotation: {x: -0.039786913, y: 0.07097274, z: -0.0028473504, w: -0.9966804}
-  m_LocalPosition: {x: 4.7844696, y: 4.018414, z: -14.265609}
+  m_LocalPosition: {x: 4.7814074, y: 4.0184135, z: -14.2660475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1459,8 +1459,9 @@ MonoBehaviour:
   maxAmmo: 10
   infiniteAmmo: 0
   bulletSpeed: 20
-  bulletRate: 0.25
+  bulletRate: 1
   bulletDamage: 1
+  bulletSound: {fileID: 8300000, guid: 0d94843deddcffe4eb1ab7bc23245117, type: 3}
 --- !u!1001 &964889542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3030,7 +3031,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 580a425331049f945af06cc19f5954a1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3489,7 +3490,7 @@ PrefabInstance:
     - target: {fileID: 3788261007804117487, guid: c24ed28220e14d74f8f62c92805d208a, type: 3}
       propertyPath: objectPrefab
       value: 
-      objectReference: {fileID: 5616906398256838321, guid: df4c0dd8273aaa841a16775bd788c817, type: 3}
+      objectReference: {fileID: 2989000923634411228, guid: 44cdcd55c8562cc46b31e272eb09fc5b, type: 3}
     - target: {fileID: 4504027122125511229, guid: c24ed28220e14d74f8f62c92805d208a, type: 3}
       propertyPath: shoot.m_Name
       value: Shoot
@@ -3616,7 +3617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6866962236750544188, guid: c24ed28220e14d74f8f62c92805d208a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.259
+      value: 3.521
       objectReference: {fileID: 0}
     - target: {fileID: 6866962236750544188, guid: c24ed28220e14d74f8f62c92805d208a, type: 3}
       propertyPath: m_LocalPosition.z

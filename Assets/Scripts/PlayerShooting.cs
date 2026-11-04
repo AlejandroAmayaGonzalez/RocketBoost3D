@@ -10,8 +10,11 @@ public class PlayerShooting : MonoBehaviour {
 
     [Header("Shooting Settings")]
     [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private float bulletRate = 0.25f;
+    [SerializeField] private float bulletRate = 1f;
     [SerializeField] private float bulletDamage = 1;
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip bulletSound;
 
     private Transform bulletSpawnPoint;
     private ObjectPull bulletPool;
@@ -39,6 +42,9 @@ public class PlayerShooting : MonoBehaviour {
             // Update last shot time
             lastShotTime = Time.time;
             
+            // Create a temporary audio source to play the bullet sound at the bullet spawn point
+            AudioSource.PlayClipAtPoint(bulletSound, bulletSpawnPoint.position, 5f);
+
             // Reduce ammo
             if (!infiniteAmmo){ currentAmmo--; }
             
@@ -50,7 +56,6 @@ public class PlayerShooting : MonoBehaviour {
             // Apply speed and movement
             Rigidbody bulletRigidBody = bullet.GetComponent<Rigidbody>();
             bulletRigidBody.linearVelocity = bulletSpawnPoint.up * bulletSpeed;
-            
         }
     }
 }
