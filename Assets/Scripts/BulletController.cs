@@ -22,7 +22,6 @@ public class BulletController : MonoBehaviour {
         hitParticles.Play();
         DeactivateBullet();
 
-        //TODO particles
         //TODO if bullet hits obstacle, destroy it
         //TODO if bullet hits player, reduce health
         //TODO if bullet hits enemy, reduce enemy health
