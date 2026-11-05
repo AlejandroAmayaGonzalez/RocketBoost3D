@@ -117,8 +117,9 @@ GameObject:
   - component: {fileID: 164696360095427260}
   - component: {fileID: 164696360095427262}
   - component: {fileID: 164696360095427263}
+  - component: {fileID: -5586228754984870529}
   m_Layer: 0
-  m_Name: StarSparrow_1_LP_Red
+  m_Name: EnemySpaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,6 +198,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5586228754984870529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164696360095427261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59403664d0ef3c458cb579c702fe7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyData: {fileID: 11400000, guid: 475e6b80d6e352a489d2bf2fb3de6379, type: 2}
 --- !u!1 &164696360136550351
 GameObject:
   m_ObjectHideFlags: 0
