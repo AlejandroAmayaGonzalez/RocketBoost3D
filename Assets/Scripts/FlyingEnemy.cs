@@ -48,12 +48,17 @@ public class FlyingEnemy : MonoBehaviour {
         
         float distanceToStart = Vector3.Distance(transform.position, startPosition);
 
-        floatingTween.Restart();
+        float duration = Mathf.Max(0.1f, distanceToStart / moveSpeed);
+
+        floatingTween = transform
+                    .DOMove(startPosition, duration)
+                    .SetEase(Ease.Linear)
+                    .OnComplete(() => StartFloating());
     }
 
     private void StartChasing(){
         currentState = EnemyState.Chasing;
-        floatingTween.Pause();
+        floatingTween.Kill();
 
         // Move towards the player
         float duration = Mathf.Max(0.1f, distanceToPlayer / moveSpeed);
