@@ -11,7 +11,6 @@ public class PlayerShooting : MonoBehaviour {
     [Header("Shooting Settings")]
     [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private float bulletRate = 1f;
-    [SerializeField] private float bulletDamage = 1;
 
     [Header("Audio Settings")]
     [SerializeField] private AudioClip bulletSound;

@@ -27,10 +27,7 @@ public class CollisionManager : MonoBehaviour {
                 break;
             case "Explosion":
                 CustomCollision(explosionAudioClip, explosionParticles);
-                break;
-            default:
-                Debug.Log("No collision");
-                break;            
+                break;                 
         }
     }
 
