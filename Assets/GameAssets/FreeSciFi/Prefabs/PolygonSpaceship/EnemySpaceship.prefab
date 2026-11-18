@@ -2315,7 +2315,7 @@ GameObject:
   - component: {fileID: -8551212322101221607}
   m_Layer: 0
   m_Name: EnemySpaceship
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyData: {fileID: 11400000, guid: 475e6b80d6e352a489d2bf2fb3de6379, type: 2}
-  enemyHitSound: {fileID: 8300000, guid: c90897c1bf46be94abd606dad998c990, type: 3}
+  currenthealth: 0
 --- !u!114 &-7244979045151741208
 MonoBehaviour:
   m_ObjectHideFlags: 0

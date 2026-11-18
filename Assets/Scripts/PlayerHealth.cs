@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] private Color blinkColor = Color.red;
 
     private bool isVulnerable = true;
-    private int currentHealth;
+    public int currentHealth;
     private AudioSource audioSource;
     
     // Starship's Sprites

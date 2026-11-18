@@ -18,13 +18,16 @@ public class BulletController : MonoBehaviour {
     private void DeactivateBullet(){ gameObject.SetActive(false); }
 
     void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Enemy")){
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
-        }
+        // The bullet dont impact with the proximity collider
+        if (other.isTrigger) return;
 
-        // Play hit sound and particles
-        AudioSource.PlayClipAtPoint(hitSound, transform.position, 5f);
-        hitParticles.Play();
-        DeactivateBullet();
+        if (other.CompareTag("Enemy") || other.CompareTag("Mine")){
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+
+            // Play hit sound and particles
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 5f);
+            hitParticles.Play();
+            DeactivateBullet();
+        }
     }
 }

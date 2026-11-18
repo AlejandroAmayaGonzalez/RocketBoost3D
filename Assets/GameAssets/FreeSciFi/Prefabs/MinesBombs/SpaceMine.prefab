@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -4768671812489496735}
   - component: {fileID: -2719968099688425759}
   - component: {fileID: -6228945002353451178}
+  - component: {fileID: 2236333119183146883}
   m_Layer: 0
   m_Name: SpaceMine
-  m_TagString: Enemy
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyData: {fileID: 11400000, guid: 0d296323214aa2b498600d2a59cf9a88, type: 2}
-  enemyHitSound: {fileID: 8300000, guid: c90897c1bf46be94abd606dad998c990, type: 3}
+  currenthealth: 0
 --- !u!82 &-6228945002353451178
 AudioSource:
   m_ObjectHideFlags: 0
@@ -151,7 +152,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 30
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 7.808568
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -227,6 +228,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &2236333119183146883
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041803199959140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8864134153005752292
 GameObject:
   m_ObjectHideFlags: 0
